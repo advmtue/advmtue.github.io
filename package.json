@@ -1,0 +1,11 @@
+{
+  "name": "advmtue.github.io",
+  "version": "1.0.0",
+  "description": "My static website. It might be a blog.",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "node test"
+  },
+  "author": "Adam Tuechler",
+  "license": "ISC"
+}
