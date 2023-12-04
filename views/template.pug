@@ -1,4 +1,6 @@
 html
-	head
-		title A webpage
-	body !{contentHTML}
+    head
+        title #{frontMatter.title} : Adam Tuechler
+        link(href="style.css" rel="stylesheet")
+    body
+        .content !{contentHTML}
