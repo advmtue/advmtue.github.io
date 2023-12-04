@@ -12,3 +12,11 @@
   color: #858585;
   margin-top: 0;
 }
+
+p {
+  font-family: 'Merriweather', serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Hedvig Letters Sans', sans-serif;
+}
