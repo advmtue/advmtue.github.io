@@ -1,4 +1,14 @@
-.content {
+.wrapper {
   width: 1024px;
   margin: 0 auto 0 auto;
+}
+
+#title {
+  font-weight: 3em;
+  margin: 0;
+}
+
+#timestamp {
+  color: #858585;
+  margin-top: 0;
 }

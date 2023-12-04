@@ -3,4 +3,7 @@ html
         title #{frontMatter.title} : Adam Tuechler
         link(href="style.css" rel="stylesheet")
     body
-        .content !{contentHTML}
+        .wrapper
+            h1#title #{frontMatter.title}
+            p#timestamp= new Date(frontMatter.datetime).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+            div.content !{contentHTML}
