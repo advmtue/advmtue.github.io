@@ -15,9 +15,9 @@ await fs.rm(OUTPUT_DIR, { force: true, recursive: true })
 await fs.mkdir(OUTPUT_DIR)
 await fs.mkdir(path.join(OUTPUT_DIR, CONTENT_DIR))
 
-const filenames = await fs.readdir('content')
+const blogFilenames = await fs.readdir('content')
 
-for (const filename of filenames) {
+for (const filename of blogFilenames) {
     const rawContent = await fs.readFile(path.join(CONTENT_DIR, filename), 'utf-8')
     const rawFrontMatter = rawContent.split(FRONTMATTER_SPLITTER)[1]
     const rawBody = rawContent.split(FRONTMATTER_SPLITTER).slice(2).join(FRONTMATTER_SPLITTER)
@@ -28,3 +28,6 @@ for (const filename of filenames) {
 
     await fs.writeFile(path.join(OUTPUT_DIR, CONTENT_DIR, htmlFileName), htmlPage)
 }
+
+// Copy static assets
+await fs.cp('static', 'build', { recursive: true })
