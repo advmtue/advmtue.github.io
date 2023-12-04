@@ -1,6 +1,6 @@
 ---
 title: Hello world
-date: 2023-11-30
+datetime: '2023-11-30T23:51:00+10:00'
 ---
 
 # Heading 1
