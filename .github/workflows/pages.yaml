@@ -1,0 +1,31 @@
+on:
+  push: main
+
+
+jobs:
+  deploy:
+    permissions:
+      pages: write
+      contents: read
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
+
+      - name: Install Node.js dependencies
+        run: npm install
+
+      - name: Build site
+        run: npm run build
+
+      - name: Upload pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+        
