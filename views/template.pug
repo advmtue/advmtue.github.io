@@ -4,9 +4,12 @@ html
         link(href="style.css" rel="stylesheet")
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-        link(href="https://fonts.googleapis.com/css2?family=Merriweather&family=Hedvig+Letters+Sans&display=block" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Merriweather&family=Hedvig+Letters+Sans&family=IBM+Plex+Mono&display=block" rel="stylesheet")
     body
+        .header
+            a(href="/") Home
         .wrapper
-            h1#title #{frontMatter.title}
-            p#timestamp= new Date(frontMatter.datetime).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
-            div.content !{contentHTML}
+            .frontmatter
+                h1#title #{frontMatter.title}
+                p#timestamp= new Date(frontMatter.datetime).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+            .content !{contentHTML}

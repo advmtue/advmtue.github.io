@@ -1,22 +1,67 @@
+/* Global variables */
+:root {
+  --max-text-width: 800px;
+  --background-color: #131313;
+  --text-color: #919191;
+  --heading-color: #BEBEBE;
+}
+
+
+h1, h2, h3, h4 { font-family: 'Hedvig Letters Sans', sans-serif; color: var(--heading-color) }
+h1 { font-size: 2.2em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+code, pre { font-family: 'IBM Plex Mono', monospace; }
+p, a { font-family: 'Merriweather', serif; }
+
+a {
+  --link-color: #4a4791;
+  text-decoration: none;
+
+  &:hover, &:link, &:active {
+    color: var(--link-color);
+  }
+
+  &:visited {
+    color: #854791;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.header {
+  padding: 1em 0 3em 0;
+  width: var(--max-text-width);
+  text-align: right;
+}
+
 .wrapper {
-  width: 1024px;
-  margin: 0 auto 0 auto;
-}
+  width: var(--max-text-width);
 
-#title {
-  font-weight: 3em;
-  margin: 0;
-}
+  .frontmatter {
+    margin-bottom: 2em;
+  }
 
-#timestamp {
-  color: #858585;
-  margin-top: 0;
-}
+  #title {
+    font-size: 2.5em;
+    margin: 0;
+  }
 
-p {
-  font-family: 'Merriweather', serif;
-}
+  #timestamp {
+    color: #858585;
+    margin-top: 0;
+  }
 
-h1, h2, h3, h4 {
-  font-family: 'Hedvig Letters Sans', sans-serif;
+  .content {
+    p {
+      font-size: 1.1em;
+      line-height: 1.5em;
+    }
+  }
 }
