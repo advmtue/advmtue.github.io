@@ -65,3 +65,11 @@ body {
     }
   }
 }
+
+.pagelist {
+  .page { 
+    a {
+      margin-left: 2em;
+    }
+  }
+}

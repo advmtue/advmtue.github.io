@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node test",
     "build": "node main.mjs",
-    "watch": "chokidar views content static -c \"npm run build\""
+    "watch": "chokidar views content static -c \"npm run build\"",
+    "serve": "serve build"
   },
   "author": "Adam Tuechler",
   "license": "ISC",
@@ -15,10 +16,11 @@
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-n": "^16.3.1",
-    "eslint-plugin-promise": "^6.1.1"
+    "eslint-plugin-promise": "^6.1.1",
+    "chokidar-cli": "^3.0.0",
+    "serve": "^14.2.1"
   },
   "dependencies": {
-    "chokidar-cli": "^3.0.0",
     "marked": "^11.0.0",
     "pug": "^3.0.2",
     "yaml": "^2.3.4"

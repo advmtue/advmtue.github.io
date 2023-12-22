@@ -1,7 +1,7 @@
 html
     head
-        title #{frontMatter.title} : Adam Tuechler
-        link(href="/style.css" rel="stylesheet")
+        title Home : Adam Tuechler
+        link(href="style.css" rel="stylesheet")
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Merriweather&family=Hedvig+Letters+Sans&family=IBM+Plex+Mono&display=block" rel="stylesheet")
@@ -9,7 +9,8 @@ html
         .header
             a(href="/") Home
         .wrapper
-            .frontmatter
-                h1#title #{frontMatter.title}
-                p#timestamp= new Date(frontMatter.datetime).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
-            .content !{contentHTML}
+            .pagelist
+                h1 Entries
+                each page in sortedPages
+                    p.page= new Date(page.datetime).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })
+                        a(href=`${page.contentPath}`) #{page.title}
